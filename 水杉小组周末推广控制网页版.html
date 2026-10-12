@@ -13,9 +13,9 @@ tbody tr:nth-child(even):not(.total) td:nth-child(n+5){background:#eee8ff!import
 <main>
   <section class="hero"><h1>水杉小组店铺推广花费</h1><p>截图数据更新页 · 公式列自动计算</p></section>
   <section class="toolbar">
-    <div class="field"><label for="cutoff">截止日期</label><input id="cutoff" type="text" value="2026.10.8"></div>
+    <div class="field"><label for="cutoff">截止日期</label><input id="cutoff" type="text" value="2026.10.11"></div>
     <div class="field"><label for="monthDays">当月天数</label><input id="monthDays" type="number" value="31" min="1"></div>
-    <div class="field"><label for="remainDays">剩余天数</label><input id="remainDays" type="number" value="23" min="0"></div>
+    <div class="field"><label for="remainDays">剩余天数</label><input id="remainDays" type="number" value="20" min="0"></div>
     <div class="hint">黄色：每日截图后更新　绿色：公式自动计算</div>
   </section>
   <div class="table-wrap"><table id="tracker"><thead><tr>
@@ -24,7 +24,7 @@ tbody tr:nth-child(even):not(.total) td:nth-child(n+5){background:#eee8ff!import
   <div class="foot">公式：目前推广花费 = 目前完成销售额 × 目前推广花费占比；剩余推广花费 = 月度目标推广花费 − 目前推广花费；剩余日均推广花费 = 剩余推广花费 ÷ 剩余天数。</div>
 </main>
 <script>
-const initial=[['水杉',3500000,.092,322000,496335.43,.1204],['百朗',520000,.17,88400,95780.72,.1832],['玉杉',15000,.35,5250,348.57,.4840],['好拓',30000,.35,10500,2002.25,.3318],['星杉',460000,.17,78200,66618.09,.2050],['贝想家',25000,.35,8750,5333.65,.3314],['绿色',340000,.17,57800,57847.78,.2672],['杉宁',90000,.35,31500,9801.17,.3182]];
+const initial=[['水杉',3500000,.092,322000,880341.20,.1017],['百朗',520000,.17,88400,158753.63,.1720],['玉杉',15000,.35,5250,1470.67,.6988],['好拓',30000,.35,10500,3462.45,.2614],['星杉',460000,.17,78200,106839.12,.1977],['贝想家',25000,.35,8750,7353.61,.3639],['绿色',340000,.17,57800,84105.46,.2745],['杉宁',90000,.35,31500,14161.58,.3349]];
 const tbody=document.querySelector('#tracker tbody'), money=n=>Number(n||0).toLocaleString('zh-CN',{minimumFractionDigits:2,maximumFractionDigits:2}), pct=n=>(Number(n||0)*100).toFixed(2)+'%';
 function input(value,row,key,cls=''){return `<input class="cell-input ${cls}" data-row="${row}" data-key="${key}" value="${value}" inputmode="decimal">`}
 function render(){
